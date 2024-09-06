@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      run: php-apache
+      matcher: php-apache
   template:
     metadata:
       labels:
@@ -46,7 +46,7 @@ spec:
   ports:
   - port: 80
   selector:
-    run: php-apache
+    matcher: php-apache
 ---
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
