@@ -52,3 +52,9 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: php-apache
+  behavior:
+    scaleDown:
+      policies:
+        - type: Percent
+          value: 10
+          periodSeconds: 30
