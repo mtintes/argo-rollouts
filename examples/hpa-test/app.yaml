@@ -57,4 +57,8 @@ spec:
       policies:
         - type: Percent
           value: 10
-          periodSeconds: 30
+          periodSeconds: 15
+        - type: Pods
+          value: 4
+          periodSeconds: 15      
+      selectPolicy: Min
