@@ -46,7 +46,7 @@ spec:
   ports:
   - port: 80
   selector:
-    matcher: php-apache
+    run: php-apache
 ---
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
