@@ -16,6 +16,7 @@ spec:
       labels:
         app.kubernetes.io/instance: test-api
         app.kubernetes.io/name: test-api
+        app.kubernetes.io/component: deployment.yaml        
     spec:
       containers:
       - name: nginx
