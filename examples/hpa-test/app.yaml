@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: test-api
-  namespace: myapp
   labels:
     app.kubernetes.io/name: test-api
     app.kubernetes.io/instance: test-api
@@ -32,7 +31,6 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: test-api-db-migration
-  namespace: myapp
   labels:
     app.kubernetes.io/name: test-api
     app.kubernetes.io/instance: test-api
@@ -59,7 +57,6 @@ apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: test-api
-  namespace: myapp
   labels:
     app.kubernetes.io/instance: test-api
     app.kubernetes.io/name: test-api
