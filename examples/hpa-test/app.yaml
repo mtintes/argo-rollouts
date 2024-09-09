@@ -29,9 +29,6 @@ metadata:
   labels: 
     run: php-apache
 spec:
-  selector:
-    matchLabels:
-      run: php-apache
   template:
     spec:
       containers:
