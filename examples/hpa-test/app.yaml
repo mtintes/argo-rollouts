@@ -42,10 +42,6 @@ metadata:
     argocd.argoproj.io/hook-delete-policy: BeforeHookCreation # Delete job before creating a new one
 spec:
   template:
-    metadata:
-      labels:
-        app.kubernetes.io/name: test-api
-        app.kubernetes.io/instance: test-api
     spec:
       containers:
       - name: test-api-db-migrate
