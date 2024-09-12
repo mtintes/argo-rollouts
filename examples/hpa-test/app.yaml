@@ -28,28 +28,6 @@ spec:
           requests:
             cpu: 500m
 ---
-apiVersion: batch/v1
-kind: Job
-metadata:
-  name: test-api-db-migration
-  labels:
-    app.kubernetes.io/name: test-api
-    app.kubernetes.io/instance: test-api
-    app.kubernetes.io/managed-by: Helm
-  annotations:
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "-30" # Syncs before other resources
-    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation # Delete job before creating a new one
-spec:
-  template:
-    spec:
-      containers:
-      - name: test-api-db-migrate
-        image: busybox
-        command: ["sh", "-c", "sleep 5"]
-        resources: {}
-      restartPolicy: Never
----
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
