@@ -31,4 +31,22 @@ spec:
           requests:
             cpu: 500m
 ---
-
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: rollback-test-api-db-migration
+  labels:
+    app.kubernetes.io/name: rollback-test-api
+    app.kubernetes.io/instance: rollback-test-api
+    app.kubernetes.io/managed-by: Helm
+  annotations:
+    argocd.argoproj.io/sync-wave: "-30"
+spec:
+  template:
+    spec:
+      containers:
+      - name: rollback-test-api-db-migrate
+        image: busybox
+        command: ["sh", "-c", "sleep 5"]
+        resources: {}
+      restartPolicy: Never
